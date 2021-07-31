@@ -15,7 +15,8 @@ func LoadRoutes() {
 	router.Router.Get(router.RouterBasePath+"/health", index.GetHealth)
 
 	// Set Endpoint for Authorization Functions
-	router.Router.With(auth.Basic).Get(router.RouterBasePath+"/auth", index.GetAuth)
+	// router.Router.With(auth.Basic).Get(router.RouterBasePath+"/auth", index.GetAuth)
+	router.Router.Get(router.RouterBasePath+"/auth", index.GetAuth)
 
 	// Set Endpoint for WhatsApp Functions
 	router.Router.With(auth.JWT).Post(router.RouterBasePath+"/login", whatsapp.WhatsAppLogin)
