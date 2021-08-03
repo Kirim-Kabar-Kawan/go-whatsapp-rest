@@ -4,3 +4,5 @@ config/stores/*
 config/uploads/*
 *.DS_Store
 !*.gitkeep
+.vscode/*
+__debug_bin

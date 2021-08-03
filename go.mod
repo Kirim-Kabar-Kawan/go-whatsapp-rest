@@ -4,7 +4,9 @@ go 1.15
 
 require (
 	github.com/Rhymen/go-whatsapp v0.1.2-0.20210407153411-c58e164e05b8
+	github.com/auth0/go-jwt-middleware v1.0.1
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
+	github.com/form3tech-oss/jwt-go v3.2.3+incompatible
 	github.com/go-chi/chi v1.5.4
 	github.com/sirupsen/logrus v1.8.1
 	github.com/skip2/go-qrcode v0.0.0-20200617195104-da1b6568686e
