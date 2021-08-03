@@ -14,6 +14,9 @@ func handlerNotFound(w http.ResponseWriter, r *http.Request) {
 
 // HandlerMethodNotAllowed Function
 func handlerMethodNotAllowed(w http.ResponseWriter, r *http.Request) {
+	if (*r).Method == "OPTIONS" {
+		return
+	}
 	log.Println(log.LogLevelWarn, "http-access", "not allowed method "+r.Method+" at URI "+r.RequestURI)
 	ResponseMethodNotAllowed(w, "not allowed method "+r.Method+" at URI "+r.RequestURI)
 }
