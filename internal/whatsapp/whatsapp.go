@@ -383,3 +383,19 @@ func WhatsAppSendLocation(w http.ResponseWriter, r *http.Request) {
 
 	router.ResponseSuccessWithData(w, "", resBody)
 }
+
+func WhatsAppCheckSession(w http.ResponseWriter, r *http.Request) {
+	jid, err := auth.GetJWTClaims(r.Header.Get("X-JWT-Claims"))
+	if err != nil {
+		router.ResponseInternalError(w, err.Error())
+		return
+	}
+
+	err = whatsapp.WASessionConnected(jid)
+	if err != nil {
+		router.ResponseInternalError(w, err.Error())
+		return
+	}
+
+	router.ResponseSuccess(w, "Session is connected")
+}

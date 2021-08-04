@@ -656,3 +656,13 @@ func WAMessageLocation(jid string, jidDest string, msgLatitude float64, msgLongi
 
 	return id, nil
 }
+
+func WASessionConnected(jid string) error {
+	err := WASessionValidate(jid)
+	if err != nil {
+		return err
+	}
+
+	return WATestPing(wac[jid])
+
+}
