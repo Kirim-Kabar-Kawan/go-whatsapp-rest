@@ -26,5 +26,4 @@ func LoadRoutes() {
 	router.Router.With(auth.Auth0).Post(router.RouterBasePath+"/send/image", whatsapp.WhatsAppSendImage)
 	router.Router.With(auth.Auth0).Post(router.RouterBasePath+"/send/video", whatsapp.WhatsAppSendVideo)
 	router.Router.With(auth.Auth0).Post(router.RouterBasePath+"/logout", whatsapp.WhatsAppLogout)
-	router.Router.With(auth.Auth0).Get(router.RouterBasePath+"/status", whatsapp.WhatsAppCheckSession)
 }
